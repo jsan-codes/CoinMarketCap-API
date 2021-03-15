@@ -1,11 +1,83 @@
 <html>
+loading...
+
+<!-- DEMO ID-->
+<h2>JavaScript Functions</h2>
+
+<p>This example creates an object with 3 properties (firstName, lastName, fullName).</p>
+<p>The fullName property is a method:</p>
+
+<p id="demo"></p>
+<p>PAGE BREAK</p><br/>
+<!-- DEMO ID END-->
+
+
+<p id="textBox">test123</p>
+<p id="textBox2">blank</p>
+<button onclick="jsonGet()">Pull JSON API</button>
+
 <script>
+    document.getElementById("textBox").addEventListener("click", jsonGet);
+    function jsonGet(){
+        //document.getElementById("textBox").innerHTML = "Hello World";
+        //document.getElementById("textBox").onclick = jsonGET(){
+
+        var newText = document.getElementById("textBox").innerHTML;
+        document.getElementById("textBox2").innerHTML = newText;
+        console.log(newText);
+
+            //var element = document.getElementByID("textBox");
+            //element.innerHTML = "New Heading";
+
+
+        }
+
+    </script>
+<script>
+    /**
+
+    // Storing data:
+    myObj = {name: "John", age: 31, city: "New York"};
+    myJSON = JSON.stringify(myObj);
+    localStorage.setItem("testJSON", myJSON);
+
+    // Retrieving data:
+    text = localStorage.getItem("testJSON");
+    obj = JSON.parse(text);
+    document.getElementById("demo").innerHTML = obj.name;
+
+
+
+
+
+
+//demo ID
+        var myObject = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+    }
+        x = myObject.fullName();
+        document.getElementById("demo").innerHTML = x;
+
+
+
+
+
+
+
+
+
+
 
 var apikey = {
     key:'2c61256d-6d19-49fa-8923-1b29a2022b2e'
 }
-    
-request('GET','https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=' + apikey.key)
+
+
+     request('GET','https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=' + apikey.key)
 .then((r1) => {
     var x1 = JSON.parse(r1.target.responseText);
     console.log(x1.data.quote.USD.total_market_cap);
@@ -22,5 +94,7 @@ function request(method, url) {
             xhr.send();
         });
 }
+
+     **/
 </script>
 </html>
